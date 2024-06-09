@@ -1,0 +1,5 @@
+ans=0
+for i in range(a,b):
+    if all(i%x==0 for x in a) and all(x%i==0 for x in b):
+        ans+=1
+        print(ans)
