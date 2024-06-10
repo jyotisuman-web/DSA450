@@ -1,0 +1,7 @@
+arr=[1,2,3,4,5]
+n=len(arr)
+
+mid=len(arr)//2
+for i in range (mid):
+   arr[i],arr[n-i-1]=arr[n-i-1],arr[i]
+print(arr)
