@@ -1,0 +1,16 @@
+#p=[7,1,5,3,6,4]
+p=[7,6,4,3,1]
+ma=0
+n=len(p)
+for i in range(n):
+     for j in range(n):
+        if i<j:
+            ma=max(ma,p[j]-p[i])
+        
+print(ma)
+  
+
+     
+               
+
+
