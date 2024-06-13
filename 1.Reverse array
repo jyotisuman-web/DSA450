@@ -5,3 +5,53 @@ mid=len(arr)//2
 for i in range (mid):
    arr[i],arr[n-i-1]=arr[n-i-1],arr[i]
 print(arr)
+
+#or
+#reverse arr
+arr=[5,4,3,2,1]
+reversed=arr[::-1]
+print(reversed)
+
+#or
+# array reversal using extra space (non-in place)
+def reverse(arr,n):
+    reversed=arr[::-1]
+    for i in reversed:
+        print(i,end=" ")
+arr=[6,5,4,3,2,1]
+n=len(arr)
+reverse(arr,n)
+
+#or
+def arrayrev(arr,n):
+    start=0
+    end=n-1
+    while start<end:
+        arr[start],arr[end]=arr[end],arr[start]
+        start+=1
+        end-=1
+    print(arr)
+arr=[1,2,3,4,5]
+n=len(arr)
+arrayrev(arr,n)
+
+#built in function
+def arrayrev(arr,n):
+    revv=list(reversed(arr))
+    #list is used because reversed func give address only so converted it into list
+    print(revv)
+arr=[1,2,3,4,5]
+n=len(arr)
+arrayrev(arr,n)
+
+# recursive function
+def arrayrev(arr,start,end):
+    
+    if start>=end:
+        return
+    arr[start],arr[end]=arr[end],arr[start]
+    arrayrev(arr,start+1,end-1)
+arr=[1,2,3,4,5]
+n=len(arr)
+arrayrev(arr,0,n-1)
+print(arr)
