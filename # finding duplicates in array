@@ -1,0 +1,11 @@
+#to find duplicates
+#using hash set
+def containsduolicate(nums):
+        seen={}
+        for num in nums:
+            if num in seen and seen[num]>=1:
+                return True
+            seen[num]=seen.get(num,0)+1
+        return False
+nums=[5,1,2,3,1,4,2]
+print(containsduolicate(nums))
