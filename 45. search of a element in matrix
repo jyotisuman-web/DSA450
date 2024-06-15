@@ -1,0 +1,33 @@
+
+a=[[1,2],[3,14]]
+target=14
+res=any(target in i for i in a)
+print(res)
+
+from itertools import chain
+a=[[1,2],[3,14]]
+target=14
+res={target}.issubset(chain.from_iterable(a))
+print(res)
+
+#log(n*m)
+def Binarysearch(a,target):
+    n=len(a)
+    m=len(a[0])
+    low=0
+    high=n*m-1 #length of a total
+    while low<=high:
+        mid=(low+high)//2
+        if a[mid//m][mid%2]==target:
+            return True
+        elif a[mid//m][mid%m]<target:
+           low=mid+1
+        else:
+            high=mid-1
+    return False
+
+a=[[1,2,3],
+   [4,5,6],
+   [7,8,9]]
+target=5
+print(Binarysearch(a,target))
