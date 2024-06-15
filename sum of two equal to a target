@@ -1,0 +1,12 @@
+#sum of two
+#two pass hash table
+def twosum(nums,target):
+    numMap={}
+    n=len(nums)
+    for i in range(n):
+        numMap[nums[i]]=i
+    for i in range(n):
+        complement=target-nums[i]
+        if complement in numMap and numMap[complement]!=1:
+            return [1,numMap[complement]]
+    return []
