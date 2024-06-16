@@ -1,0 +1,13 @@
+def bubble(arra):
+    length=len(arra)
+    for i in range(0,length-1):
+        for j in range(0,length-i-1):
+            if arra[j]>arra[j+1]:
+                arra[j],arra[j+1]=arra[j+1],arra[j]
+def main():
+    scores=[2,4,1,5,7,8,0]
+    bubble(scores)
+    for score in scores:
+        print(score,",",end="")
+if __name__=="__main__":  
+    main()  
