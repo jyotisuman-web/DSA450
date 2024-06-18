@@ -1,0 +1,14 @@
+arr=[3,1,2,2,1,2,3,3]
+k=4
+n=len(arr)
+count={}
+x=n//k
+for i in range(n):
+    if arr[i] in count:
+        count[arr[i]]+=1
+    else:
+        count[arr[i]]=1
+for i in count:
+    if (count[i]>x):
+        print(i)
+
