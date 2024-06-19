@@ -1,0 +1,53 @@
+def rowwithmatrix(arr,n,m):
+    max_ans=-1 #as count can be zero to satisfy count>max_ans condition
+    index=-1 #to get the index as index as it start from 0
+    for i in arr:
+        count=0
+        index=index+1 
+        for j in i:
+            if j==1:
+                count+=1 
+        if count>max_ans: 
+            ans=index # required thing
+            max_ans=count # if we will not add it then the max_ans remain the same
+    if max_ans==0:
+        return -1
+             
+    return ans
+
+x=[[0,1,1,1],
+   [0,0,1,1],
+   [1,1,1,1],
+   [0,0,0,0]]
+n=len(x)
+m=len(x[0])
+c=rowwithmatrix(x,n,m)
+print(c)
+
+#method 2
+def rowwithmatrix(arr,n,m):
+    ans=0
+    Index=-1
+    for i in range(n):
+      j=0
+      k=m-1 #last column
+      while j<=k:
+        mid=int((j+k)/2)
+        if arr[i][mid]==1:
+            if m-mid>ans: 
+               ans=m-mid
+               index=i 
+            k=mid-1 
+        else:
+         j=mid+1 
+    return index
+
+x=[[0,1,1,1],
+   [0,0,1,1],
+   [1,1,1,1],
+   [0,0,0,0]]
+n=len(x)
+m=len(x[0])
+c=rowwithmatrix(x,n,m)
+print(c)
+
