@@ -1,14 +1,37 @@
-arr=[3,1,2,2,1,2,3,3]
+
+
+#n //k times
+def div(arr):
+    x=n//k
+    feq={}
+    a=[]
+    for i in range(n):
+        if arr[i] in feq:
+            feq[arr[i]]+=1
+        else:
+            feq[arr[i]]=1
+    for i in feq:
+        if feq[i]>x:
+            a.append(i)
+    return a
+        
+        
+arr=[1,1,2,3,3,2,3,2]
 k=4
 n=len(arr)
-count={}
-x=n//k
-for i in range(n):
-    if arr[i] in count:
-        count[arr[i]]+=1
-    else:
-        count[arr[i]]=1
-for i in count:
-    if (count[i]>x):
-        print(i)
+print(div(arr))
 
+#n //k times
+from collections import Counter
+def div(arr):
+    x=n//k
+    m=Counter(arr)
+    a=[]
+    for i in m:
+        if m[i]>x:
+            a.append(i)
+    return a
+arr=[1,1,2,3,3,2,3,2]
+k=4
+n=len(arr)
+print(div(arr))
