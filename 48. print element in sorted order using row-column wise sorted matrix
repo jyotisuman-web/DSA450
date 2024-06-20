@@ -1,0 +1,17 @@
+def row_order(mat):
+    a1=[]
+    for i in range(n):
+        for j in range(m):
+            a1.append(mat[i][j])
+    a1.sort()
+    x=0
+    for i in range(n):
+        for j in range(len(mat[0])):
+            mat[i][j]=a1[x]
+            x+=1
+    return mat
+mat=[[10,20],
+     [30,40]]
+n=len(mat)
+m=len(mat[0])
+print(row_order(mat))
