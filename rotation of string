@@ -1,0 +1,89 @@
+#check if the string is the rotation of other
+def checkString(s1,s2,indexfound,n):
+    for i in range(n):
+        if s1[i]!=s2[indexfound]:
+            return False
+        return True
+s1='abcd'
+s2='cdab'
+if len(s1)!=len(s2):
+    print(" not the rotation")
+else:
+    indexes=[]
+    n=len(s1)
+    firstchar=s1[0]
+    for i in range(n):
+        if s2[i]==firstchar:
+            indexes.append(i)
+    isrotation =False
+    for id in indexes:
+        isrotation=checkString(s1,s2,id,n)
+        if (isrotation):
+            break
+    if (isrotation):
+        print("strings are rotations of each other")
+    else:
+        print("string are not rotation")
+        
+def rotation(s1,s2):
+    size1=len(s1)
+    size2=len(s2)
+    temp=''
+    if size1!=size2:
+        return 0
+    else:
+        for i in range(size1):
+            if s1[i]==s2[0]:
+                if s1[i:]==s2[:len(s1)-i]:
+                    return True
+        return False
+    
+
+if __name__=='__main__':
+    s1='abcd'
+    s2='cdab'
+    if rotation(s1,s2):
+        print("rotation of each other")
+    else: 
+        print("not")
+
+def rotation(s1,s2):
+    size1=len(s1)
+    size2=len(s2)
+    temp=''
+    if size1!=size2:
+        return 0
+    temp=s1+s1
+    if s2 in temp:
+        return 1
+    else:
+        return 0
+
+if __name__=='__main__':
+    s1='abcd'
+    s2='cdab'
+    if rotation(s1,s2):
+        print("rotation of each other")
+    else: 
+        print("not")
+
+def rotation(s1,s2):
+    size1=len(s1)
+    size2=len(s2)
+    temp=''
+    if size1!=size2:
+        return 0
+    temp=s1+s1
+    if (temp.count(s2)>0):
+        return 1
+    else:
+        return 0
+if __name__=='__main__':
+    s1='abcd'
+    s2='cdab'
+    if rotation(s1,s2):
+        print("rotation of each other")
+    else: 
+        print("not")
+
+
