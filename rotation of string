@@ -86,4 +86,39 @@ if __name__=='__main__':
     else: 
         print("not")
 
+#or
+def checkString(s,goal):
+    #if len(s)!=len(goal):
+     #   return 0
+    q1=[]
+    for i in range(len(s)):
+        q1.insert(0,s[i])
+        print("q1",q1)
+    q2=[]
+    for i in range(len(goal)):
+        q2.insert(0,goal[i])
+        print("q2:",q2)
+    k=len(goal)
+    while (k>0):
+        ch=q2[0]
+        print("ch:",ch)
+        q2.pop(0)
+        print(q2)
+        q2.append(ch)
+        print(ch)
+        if (q2==q1):
+            return True
+        k-=1
+    return False
+if __name__=="__main__":
+    string1='abcd'
+    string2='cdab'
+    if checkString(string1,string2):
+        print("string arerotation of each other")
+    else:
+        print("string are rotation of each other")
+
+
+
+
 
