@@ -1,0 +1,26 @@
+#min window sustring that contain all char of string
+from collections import Counter
+def minwindow(s,t):
+    if not t or not s:
+        return ''
+    dict_t=Counter(t)
+    required=len(dict_t)
+    l,right=0,0
+    formed=0
+    window_count={}
+    ans=float("inf"),None,None
+    while right<len(s):
+        char=s[right]
+        window_count[char]=window_count.get(char,0)+1
+        if char in dict_t and window_count[char]==dict_t[char]:
+            formed+=1
+        while l<=right and formed==required:
+            char=s[l]
+            if right-l+1<ans[0]:
+                ans=(right-l+1,l,right)
+            window_count[char]-=1
+            if char in dict_t and len(char)<dict_t[char]:
+                formed-=1
+            l+=1
+            r+=1
+    return "" if ans[0]==float("inf") else s[ans[1]:s[2]+1]
