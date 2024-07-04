@@ -1,0 +1,16 @@
+myarr=[170,45,74,90,802,24,2,66]
+print("original array:",myarr)
+radixarr=[[],[],[],[],[],[],[],[],[],[]]
+maxvla=max(myarr)
+exp=1
+while maxvla//exp>0:
+    while len(myarr)>0:
+        val=myarr.pop(0)
+        radixindex=(val//exp)%10
+        radixarr[radixindex].append(val)
+    for bucket in radixarr:
+        while len(bucket)>0:
+            val=bucket.pop()
+            myarr.append(val)
+    exp*=10
+print(myarr)
