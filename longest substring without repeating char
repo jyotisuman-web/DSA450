@@ -1,0 +1,14 @@
+#longest substring without repeating char
+def substring(s1):
+    freq={}
+    max_len=0
+    left=0
+    for right in range(n):
+        if s[right] in freq:
+            left=max(left,freq[s[right]]+1)
+        freq[s[right]]=right
+        max_len=max(max_len,right-left+1)
+    return max_len
+s='abcabc'
+n=len(s)
+print(substring(s))
