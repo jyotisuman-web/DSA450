@@ -7,6 +7,9 @@ for i in range (mid):
 print(arr)
 
 #or
+#non in place 
+#TIME COmplexity=O(n)
+#space complexity=O(n) as we are creating a new arr of same size
 #reverse arr
 arr=[5,4,3,2,1]
 reversed=arr[::-1]
@@ -23,6 +26,9 @@ n=len(arr)
 reverse(arr,n)
 
 #or
+#in place comparison
+#time complexity=O(n)
+#space Complexity=O(1) as no extra space is required to be created
 def arrayrev(arr,n):
     start=0
     end=n-1
@@ -36,6 +42,8 @@ n=len(arr)
 arrayrev(arr,n)
 
 #built in function
+#time complexity=O(n)
+#Space complexity=O(1)
 def arrayrev(arr,n):
     revv=list(reversed(arr))
     #list is used because reversed func give address only so converted it into list
@@ -45,8 +53,9 @@ n=len(arr)
 arrayrev(arr,n)
 
 # recursive function
+#Time Complexity=O(n)
+#space complexity=O(n) for non in-place and O(nlog) for in -place due to recursion
 def arrayrev(arr,start,end):
-    
     if start>=end:
         return
     arr[start],arr[end]=arr[end],arr[start]
