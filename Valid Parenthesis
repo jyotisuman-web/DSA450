@@ -1,0 +1,17 @@
+#valid parenthesis
+def check_brackets(s):
+    stack = []
+    for i in range(len(s)):
+        if s[i] in '({[':
+            stack.append(s[i])
+        elif s[i] in ')}]':
+            if not stack:
+                return False
+            p = stack.pop()
+            if not ((s[i] == ')' and p == '(') or (s[i] == '}' and p == '{') or (s[i] == ']' and p == '[')):
+                return False
+    return not stack
+
+# Test case
+s = "{[()}"
+print(check_brackets(s))  # Should return True for valid brackets
